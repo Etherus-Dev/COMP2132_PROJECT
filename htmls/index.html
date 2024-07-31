@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page | COMP2132 -Project</title>
+        <!-- Loading same-origin / offline Normalize css first -->
+        <link rel="stylesheet" href="../css/normalize.css">
+        <!-- Attempt to download an updated version of Normalize css -->
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- If failed, load the local copy which is 3.7.1 -->
+        <script src="../scripts/jquery-3.7.1.min.js"></script>
+        <script src="../scripts/UtilConstant.js"></script>
+        <script src="../scripts/Util.js"></script>
+        <script src="../scripts/Word.js"></script>
+        <script src="../scripts/Words.js"></script>
+        <script src="../scripts/Answer.js" defer="defer"></script>
+    </head>
+    <body>
+        <div id="body-wrapper">
+            <header>
+                <div id="header-wrapper">
+                    <div id="header-bar">
+                        <h1 id="header-bar-heading">Hangman Game</h1>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div id="main-wrapper">
+                    <section id="section-game-output">
+                        <h2 id="section-game-output-heading">
+                            Correct Guess:
+                            <span id="correct-guess-text">
+                                0
+                            </span>
+                            /
+                            <span id="total-guess-text">
+                                0
+                            </span>
+                        </h2>
+                        <p id="section-game-output-word">
+                            Word:
+                            <strong>
+                                <span id="section-game-output-word-text">
+                                    Error! Cannot load the word!
+                                </span>
+                            </strong>
+                        </p>
+                        <p id="section-game-output-hint">
+                            Hint:
+                            <strong>
+                                <span id="section-game-output-hint-text">
+                                    Error! Cannot load the hint!
+                                </span>
+                            </strong>
+                        </p>
+                        <div id="hangman-image-and-prompt-div">
+                            <img id="hangman-img"
+                                src="../images/Hangman/Hangman-0.svg"
+                                alt="Hangman image (Wrong count: 0 put of 6)"
+                                referrerpolicy="no-referrer">
+                            <div id="lose-retry-div" class="prompt-div">
+                                <p>
+                                    You have loss the game.
+                                </p>
+                                <p>
+                                    Do you want to retry with a new word?
+                                </p>
+                                <button id="lose-retry-yes" class="loss-retry-button">
+                                    Yes
+                                </button>
+                                <button id="lose-retry-no" class="loss-retry-button">
+                                    No
+                                </button>
+                            </div>
+                            <div id="win-retry-div" class="prompt-div">
+                                <p>
+                                    You have win the game.
+                                </p>
+                                <p>
+                                    Do you want to retry with a new word?
+                                </p>
+                                <p id="win-retry-removal-text">
+                                    Note: The previous word will not appear again.
+                                </p>
+                                <button id="win-retry-yes" class="win-retry-button">
+                                    Yes
+                                </button>
+                                <button id="win-retry-no" class="win-retry-button">
+                                    No
+                                </button>
+                            </div>
+                            <div id="perfect-win-div" class="prompt-div">
+                                <p>
+                                    Congratulations! You have successfully guessed all the words!
+                                </p>
+                                <p>
+                                    There is no more new word for you to guess.
+                                </p>
+                                <p id="perfect-win-thank-you-text">
+                                    Thank you for playing this game!
+                                </p>
+                                <button id="perfect-win-confirm" class="perfect-win-button">
+                                    Confirm
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <div id="div-game-input-control">
+                        <button id="button-a" class="input-button">A</button>
+                        <button id="button-b" class="input-button">B</button>
+                        <button id="button-c" class="input-button">C</button>
+                        <button id="button-d" class="input-button">D</button>
+                        <button id="button-e" class="input-button">E</button>
+                        <button id="button-f" class="input-button">F</button>
+                        <button id="button-g" class="input-button">G</button>
+                        <button id="button-h" class="input-button">H</button>
+                        <button id="button-i" class="input-button">I</button>
+                        <button id="button-j" class="input-button">J</button>
+                        <button id="button-k" class="input-button">K</button>
+                        <button id="button-l" class="input-button">L</button>
+                        <button id="button-m" class="input-button">M</button>
+                        <button id="button-n" class="input-button">N</button>
+                        <button id="button-o" class="input-button">O</button>
+                        <button id="button-p" class="input-button">P</button>
+                        <button id="button-q" class="input-button">Q</button>
+                        <button id="button-r" class="input-button">R</button>
+                        <button id="button-s" class="input-button">S</button>
+                        <button id="button-t" class="input-button">T</button>
+                        <button id="button-u" class="input-button">U</button>
+                        <button id="button-v" class="input-button">V</button>
+                        <button id="button-w" class="input-button">W</button>
+                        <button id="button-x" class="input-button">X</button>
+                        <button id="button-y" class="input-button">Y</button>
+                        <button id="button-z" class="input-button">Z</button>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <nav id="footer-nav">
+                    <ul>
+                        <li>
+                            <a href="#main-wrapper" target="_self"> Back to top</a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+    </body>
+</html>

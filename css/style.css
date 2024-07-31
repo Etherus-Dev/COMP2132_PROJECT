@@ -1,0 +1,264 @@
+/* Ensure all elements use box-sizing:border-box to make sure border is included in sizing */
+/* 16px as basis for em and rem tag */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  /* This is to fix the overflow issue raised by Firefox inspector */
+  width: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/* Loading custom fonts. Fonts obtained from Google fonts */
+@font-face {
+  font-family: "Playwrite US Trad";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/Playwrite.woff2) format("woff2");
+}
+/* Ensure all elements use box-sizing:border-box to make sure border is included in sizing */
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+figure {
+  margin: 0px;
+}
+
+/* Setting all items in body as flex-box design */
+#body-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 100vh;
+  /* Supports full HD as maximum width */
+  max-width: 1400px;
+  /* Center the sub-elements automatically */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header,
+main section,
+footer,
+#div-game-input-control {
+  margin: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(7.1px);
+          backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+main section p,
+main section label,
+main section input:not([type=submit]) {
+  margin: 0px;
+  padding: 4px;
+}
+
+/* Remove underline on anchor link by default */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Re-enable underline on anchor link when hovering */
+/* Remove all bullet points from unordered list within navigation section */
+nav ul {
+  list-style-type: none;
+}
+
+/* Reduce the padding left to provide better visibility in thin screen */
+ul {
+  padding-left: 8px;
+}
+
+li {
+  margin: 8px;
+}
+
+#header-wrapper {
+  display: flex;
+  /* This will make the header-nav become the next row by default */
+  flex-direction: column;
+  /* Move items to vertical center */
+  align-items: center;
+  justify-content: space-around;
+}
+
+#header-bar {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+#header-bar-heading {
+  flex-grow: 1;
+  text-align: center;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+h2,
+h3 {
+  margin: 8px;
+  font-family: "Playwrite US Trad", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#section-game-output-heading,
+#section-game-output-word,
+#section-game-output-hint {
+  text-align: center;
+}
+
+.extra-letter-space-and-boldness {
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+
+#hangman-image-and-prompt-div {
+  position: relative;
+}
+
+.prompt-div {
+  position: absolute;
+  top: 0px;
+  left: 25%;
+  min-width: 50%;
+  max-width: 100%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  border: 3px solid rgb(0, 0, 0);
+  text-align: center;
+  padding: 8px;
+  display: none;
+}
+
+#lose-retry-div {
+  z-index: 2;
+  background: rgba(255, 0, 0, 0.8);
+}
+
+#win-retry-div {
+  z-index: 3;
+  background: rgba(0, 255, 0, 0.8);
+}
+
+#perfect-win-div {
+  z-index: 4;
+  background: rgba(127, 127, 127, 0.8);
+}
+
+/* The text is too long if the screen is too narrow. Disabled by default. Will be re-enabled at 300px and 400px width. */
+#win-retry-removal-text,
+#perfect-win-thank-you-text {
+  display: none;
+}
+
+#div-game-input-control {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  z-index: -1;
+}
+
+.input-button {
+  background: rgba(0, 255, 0, 0.4);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(7.1px);
+          backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  box-sizing: border-box;
+}
+.input-button:hover, .input-button:focus {
+  box-shadow: 0px 0px 5px 10px inset rgb(255, 255, 0);
+}
+
+#div-game-input-control .correct-guess-button {
+  background: rgba(0, 0, 255, 0.4);
+  border: 1px solid rgba(0, 0, 255, 0.3);
+  box-shadow: unset;
+}
+#div-game-input-control .wrong-guess-button {
+  background: rgba(255, 0, 0, 0.4);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: unset;
+}
+#div-game-input-control .disable-guess-button {
+  box-shadow: unset;
+}
+
+@media screen and (min-width: 300px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #win-retry-removal-text {
+    display: block;
+  }
+}
+@media screen and (min-width: 400px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 350px) {
+  #perfect-win-thank-you-text {
+    display: block;
+  }
+}
+@media screen and (min-width: 400px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 500px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 600px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 700px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 750px) {
+  #div-game-input-control {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
